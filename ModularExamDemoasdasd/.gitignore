@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+.idea/
+*.user
+*.suo
+TestResults/
+src/StudentRecords.ConsoleApp/bin/**/data/
