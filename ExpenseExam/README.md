@@ -17,12 +17,14 @@ ExpenseExam/
     FileStorage/
       CsvStorage.cs
       ExcelStorage.cs
+      JsonStorage.cs
     Diagnostics/
       DebugHelper.cs
   ExpenseExam.App/
     Program.cs
   ExpenseExam.Tests/
     ExpenseServiceTests.cs
+    FileStorageTests.cs
 ```
 
 ## Команды создания проекта
@@ -53,6 +55,7 @@ dotnet run --project .\ExpenseExam.App\ExpenseExam.App.csproj
 
 - `expenses.csv`
 - `expenses.xlsx`
+- `expenses.json`
 
 ## Тесты
 
@@ -69,7 +72,7 @@ git commit -m "Initial project structure"
 
 git switch -c feature/file-storage
 git add .
-git commit -m "Add CSV and XLSX file storage"
+git commit -m "Add CSV XLSX and JSON file storage"
 
 git switch main
 git merge feature/file-storage
@@ -80,4 +83,4 @@ git push -u origin main
 
 ## Текст для защиты
 
-Я разработал консольное приложение для учёта расходов. Решение состоит из DLL-библиотеки, консольного приложения и проекта с модульными тестами. В DLL находится основная логика: модель расхода, сервис расчётов, классы для работы с CSV и XLSX, а также отладочный класс DebugHelper. Консольный проект подключает DLL и использует её классы. Для проверки логики написаны модульные тесты. Для контроля версий используется Git.
+Я разработал консольное приложение для учёта расходов. Решение состоит из DLL-библиотеки, консольного приложения и проекта с модульными тестами. В DLL находится основная логика: модель расхода, сервис расчётов, классы для работы с CSV, XLSX и JSON, а также отладочный класс DebugHelper. Консольный проект подключает DLL и использует её классы. Для проверки логики написаны модульные тесты. Для контроля версий используется Git.

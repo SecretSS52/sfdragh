@@ -12,12 +12,14 @@ var expenses = new List<Expense>
 var service = new ExpenseService();
 var csvStorage = new CsvStorage();
 var excelStorage = new ExcelStorage();
+var jsonStorage = new JsonStorage();
 
 var dataFolder = Path.Combine(AppContext.BaseDirectory, "data");
 Directory.CreateDirectory(dataFolder);
 
 var csvPath = Path.Combine(dataFolder, "expenses.csv");
 var xlsxPath = Path.Combine(dataFolder, "expenses.xlsx");
+var jsonPath = Path.Combine(dataFolder, "expenses.json");
 
 Console.WriteLine("Учёт расходов");
 Console.WriteLine("=============");
@@ -32,5 +34,9 @@ Console.WriteLine($"CSV загружено записей: {expensesFromCsv.Coun
 excelStorage.Save(xlsxPath, expenses);
 var expensesFromXlsx = excelStorage.Load(xlsxPath);
 Console.WriteLine($"XLSX загружено записей: {expensesFromXlsx.Count}");
+
+jsonStorage.Save(jsonPath, expenses);
+var expensesFromJson = jsonStorage.Load(jsonPath);
+Console.WriteLine($"JSON загружено записей: {expensesFromJson.Count}");
 
 Console.WriteLine($"Файлы созданы в папке: {dataFolder}");
